@@ -1,0 +1,13 @@
+initial minimization
+&cntrl 
+    imin           = 1, 
+    ntmin          = 1,
+    ncyc           = 10000,
+    maxcyc         = 100000, 
+    ntpr           = 100, 
+    ntb            = 1,         !constant volume   
+    nmropt         = 1,       !Restraints 
+&end 
+&wt TYPE='END' / 
+DISANG=0_Parent_example/1A5_6NB_GS_DISANG_min.rst
+/ 

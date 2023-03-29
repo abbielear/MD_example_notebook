@@ -1,0 +1,33 @@
+Production 45 ps, save every 0.5 ps, 25 ps production, 50 production snapshots
+&cntrl     
+    imin           = 0,       !do MD                                                       
+    irest = 1, ntx = 5,       !no restart 
+    ntpr           = 100,     !save energy ever n steps 
+    ntwx           = 500,     !save coordinates ever n steps 
+    ntwr           = 100,     !save restrt file ever n steps 
+    nstlim         = 45000,   !number steps 10 ps+10 ps string opt 25 ps production  
+    dt             = 0.001,   !stepsize in ps 
+    ioutfm         = 1,       !Binary output faster 
+    iwrap          = 1,       !Put Atoms back into Box                   
+    ntt            = 2        !Andersen thermostate                       
+    tempi          = 300,     !initial temp 
+    temp0          = 300,     !target temp 
+    ntp            = 1,       !pressure                                     
+    ntc = 1, ntf   = 1,       !no shake          
+    cut            = 8,       !e. static cutoff 
+    ntb            = 2,       !constant pressure
+    nmropt         = 1,       !Restraints  
+    ifqnt          = 1,       !Switch on QM/MM coupled potential
+&end 
+&qmmm 
+    qmmask = ':248|:177@CD,OE1,OE2,CG,HG1,HG2', 
+    qmcharge = -1, 
+    spin = 1, 
+    qm_theory = 'DFTB3',
+    qmshake = 0,
+    qmcut = 8.0,
+    !itrmax = 1000000,
+    printcharges = 1, 
+    dftb_telec=100
+&end
+&wt TYPE='END' /

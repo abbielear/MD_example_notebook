@@ -1,0 +1,14 @@
+# 01/18/23 14:51:40
+parm 1A5_6NB_GS.parm7
+parm 1A5_6NB_TS.parm7
+list parm
+comparetop 0 1
+:8563
+select :8563
+select :8564-8569
+exit
+# 01/18/23 15:29:06
+parm 1A5_6NB_TS.parm7
+ls
+cd ..
+exit

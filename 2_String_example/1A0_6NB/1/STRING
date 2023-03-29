@@ -1,0 +1,6 @@
+"$STRINGSETUP
+dir = "results/"
+guess_file = "../guess"
+force_constant = 100.0
+remove_z_bias = .false.
+$END       

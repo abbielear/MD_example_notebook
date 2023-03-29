@@ -1,0 +1,25 @@
+0.05 ns (50000*0.001ps) Explicit solvent molecular dynamics heating            
+&cntrl                                                                     
+    imin           = 0,       !do MD                                                       
+    irest = 0, ntx = 1,       !no restart                                          
+    ntpr           = 5000,    !save energy ever n steps                                 
+    ntwx           = 5000,    !save coordinates ever n steps                            
+    ntwr           = 5000,    !save restrt file ever n steps                            
+    nstlim         = 50000,   !number steps                                       
+    dt             = 0.001,   !stepsize in ps                                          
+    ioutfm         = 1,       !Binary output faster                                    
+    iwrap          = 1,       !Put Atoms back into Box                                  
+    ntt            = 2        !Andersen thermostate                              
+    tempi          = 0.0,     !initial temp                                              
+    temp0          = 300,     !target temp                                              
+    ntc = 1, ntf   = 1,       !no shake                                                
+    ntb            = 1,       !Constant Volumen 
+    cut            = 8,       !e. static cutoff                                             
+    nmropt         = 1,       !Restraints         
+&end                                                                       
+&wt                                                                        
+    TYPE='TEMP0', ISTEP1=10000, ISTEP2=50000,                                  
+    VALUE1=10.0, VALUE2=300,                                               
+&end                                                       
+&wt TYPE='END' /       
+DISANG=0_Parent_example/1A5_6NB_TS_DISANG.rst      

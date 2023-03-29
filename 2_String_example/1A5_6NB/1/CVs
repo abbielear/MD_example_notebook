@@ -1,0 +1,16 @@
+3
+
+$COLVAR
+COLVAR_type = "BOND"
+atoms = 4080, 4069
+$END
+
+$COLVAR
+COLVAR_type = "BOND"
+atoms = 4079, 4081
+$END
+
+$COLVAR
+COLVAR_type = "ANGLE"
+atoms = 4077, 4080, 4079
+$END

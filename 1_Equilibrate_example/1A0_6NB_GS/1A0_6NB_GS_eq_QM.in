@@ -1,0 +1,33 @@
+20 ps (20000*0.001 ps) QMMM equilibration  1000*0.001 = 1 ps/saved frame
+&cntrl 
+    imin           = 0,       !do MD                                                       
+    irest = 0, ntx = 1,       !no restart           
+    ntpr           = 100,     !save energy ever n steps 
+    ntwx           = 100,     !save coordinates ever n steps 
+    ntwr           = 100,     !save restrt file ever n steps 
+    nstlim         = 20000,   !number steps 
+    dt             = 0.001,   !stepsize in ps 
+    ioutfm         = 1,       !Binary output faster 
+    iwrap          = 1,       !Put Atoms back into Box                   
+    ntt            = 2        !Andersen thermostate                       
+    tempi          = 300,     !initial temp 
+    temp0          = 300,     !target temp 
+    ntp            = 1,       !pressure                                     
+    ntc = 1, ntf   = 1,       !no shake          
+    cut            = 8,       !e. static cutoff 
+    ntb            = 2,       !constant pressure
+    nmropt         = 1,       !Restraints  
+    ifqnt          = 1,       !Switch on QM/MM coupled potential
+&end 
+&qmmm 
+    qmmask = ':248|:177@CD,OE1,OE2,CG,HG1,HG2', 
+    qmcharge = -1, 
+    writepdb = 1, !Saves QM region as PDB 
+    spin = 1, 
+    qm_theory = 'DFTB3',
+    qmshake = 0,
+    qmcut = 8.0,
+    itrmax = 1000000,
+&end 
+&wt TYPE='END' /
+DISANG=0_Parent_example/1A0_6NB_GS_DISANG.rst      
